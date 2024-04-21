@@ -4,9 +4,21 @@
   box-sizing: border-box;
 }
 
-
 body {
   background-color: #020611;
+}
+
+.section {
+  margin: auto;
+  padding: 3rem;
+  width: 90%;
+  background-color: #020611;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .landing {
@@ -18,12 +30,14 @@ body {
 }
 
 .section-title {
-  color: #00979f;
   font-size: 1rem;
+
+  color: white;
 }
 
 .section-title span {
   margin-right: 2rem;
+  color: #00979f;
 }
 
 .container {
@@ -39,12 +53,13 @@ body {
 .container .title {
   position: absolute;
   top: 30%;
+  width: 100%;
 }
 
 .container .title::before {
   content: "";
   position: absolute;
-  width: 40%;
+  width: 10%;
   height: 2px;
   background-color: #00979f;
   top: -1rem;
@@ -66,17 +81,7 @@ strong {
   color: #90bfc2;
 }
 
-.about-me {
-  margin: auto;
-  padding: 3rem;
-  width: 90%;
-  background-color: #020611;
-  color: white;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
+
 
 .about-me .text {
   width: 100%;
@@ -91,8 +96,8 @@ h1 {
   font-size: 1rem;
 }
 
-.about-me .info {
-  width: 50%;
+.section .info {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
@@ -103,14 +108,6 @@ h1 {
   justify-content: flex-start;
   gap: 1rem;
   margin-top: 10px;
-}
-
-.Portfolio {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-top: 2rem !important;
-  height: auto;
 }
 
 .videos {
@@ -125,5 +122,48 @@ h1 {
   max-width: 100%; /* Make each video fill its grid cell */
   height: 200px;
   width: 200px;
- cursor: pointer;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width : 767px) {
+    body{
+     font-size: 14px;
+    }
+
+    .title{
+       display: flex;
+       align-items: flex-start;
+       justify-content: center;
+       color: white !important;
+    }
+    .title h1,h2,h3,h4,p{
+        color: white;
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+    }
+    .section .info{
+        display: flex;
+        flex-direction: column;
+    }
+    
+.videos {
+    display: grid;
+    grid-template-columns: 1fr ;
+    overflow: hidden;
+    width: 60%;
+    gap: 10px;
+  }
+  .videos .video {
+   /* Make each video fill its grid cell */
+    width: 100%;
+    cursor: pointer;
+  }
 }
